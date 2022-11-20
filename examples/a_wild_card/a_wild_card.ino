@@ -18,8 +18,8 @@
 #include <SDI12.h>
 
 #define SERIAL_BAUD 115200 /*!< The baud rate for the output serial port */
-#define DATA_PIN 7         /*!< The pin of the SDI-12 data bus */
-#define POWER_PIN 22       /*!< The sensor power pin (or -1 if not switching power) */
+#define DATA_PIN 69         /*!< The pin of the SDI-12 data bus -  PIN 69 SI ES CON LA UNIFICADA V2*/
+#define POWER_PIN -1       /*!< The sensor power pin (or -1 if not switching power) */
 
 /** Define the SDI-12 bus */
 SDI12 mySDI12(DATA_PIN);
@@ -29,7 +29,7 @@ SDI12 mySDI12(DATA_PIN);
   'I' indicates that the command wants information about the sensor
   '!' finishes the command
 */
-String myCommand = "?I!";
+String myCommand;
 
 void setup() {
   Serial.begin(SERIAL_BAUD);
@@ -47,13 +47,24 @@ void setup() {
     digitalWrite(POWER_PIN, HIGH);
     delay(200);
   }
-}
 
-void loop() {
+  myCommand = "0M!";
+  Serial.println("Iniciar medición, espere 25 seg");
   mySDI12.sendCommand(myCommand);
   delay(300);                    // wait a while for a response
   while (mySDI12.available()) {  // write the response to the screen
     Serial.write(mySDI12.read());
   }
-  delay(3000);  // print again in three seconds
+ delay(25000); 
+   myCommand = "0D0!";
+  Serial.println("Enviar datos...");
+  mySDI12.sendCommand(myCommand);
+  delay(300);                    // wait a while for a response
+  while (mySDI12.available()) {  // write the response to the screen
+    Serial.write(mySDI12.read());
+  }  
+}
+
+void loop() {
+
 }

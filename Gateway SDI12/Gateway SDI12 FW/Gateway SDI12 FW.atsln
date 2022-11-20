@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Gateway SDI12 FW", "Gateway SDI12 FW.cppproj", "{96D73E30-44CE-4E17-8B9A-0D69286AAC9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96D73E30-44CE-4E17-8B9A-0D69286AAC9F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{96D73E30-44CE-4E17-8B9A-0D69286AAC9F}.Debug|AVR.Build.0 = Debug|AVR
+		{96D73E30-44CE-4E17-8B9A-0D69286AAC9F}.Release|AVR.ActiveCfg = Release|AVR
+		{96D73E30-44CE-4E17-8B9A-0D69286AAC9F}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
